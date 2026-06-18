@@ -1,0 +1,68 @@
+name: Metrics
+on:
+  # 更新頻度: 毎日 0:00 UTC（= 日本時間 9:00）。重ければ "0 0 * * 0"（週1・日曜）に変えてOK
+  schedule: [{ cron: "0 0 * * *" }]
+  workflow_dispatch:        # 手動実行ボタンを有効化
+  push: { branches: ["main"] }   # main に push したときも生成
+
+permissions:
+  contents: write           # 生成したSVGを自動コミットするのに必要
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: 0kgg
+          filename: github-metrics.svg
+          template: classic
+
+          # ── 基本（About me / Activity / Community stats / Repositories）──
+          base: header, activity, community, repositories, metadata
+
+          # ── 言語（ドーナツ＋3D＋詳細解析）──
+          plugin_languages: yes
+          plugin_languages_indepth: yes
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+
+          # ── 等角コントリビューションカレンダー ──
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+          # ── Issue / PR の集計（画像の "Overall issues and pull requests status"）──
+          plugin_followup: yes
+          plugin_followup_sections: repositories
+          plugin_followup_indepth: yes
+
+          # ── コーディング習慣（時間帯・曜日ヒートマップ）──
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+
+          # ── 最近のアクティビティ ──
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+
+          # ── 注目リポジトリ・スター ──
+          plugin_notable: yes
+          plugin_stars: yes
+          plugin_stars_limit: 4
+
+          # ── 取り組んでいるトピック ──
+          plugin_topics: yes
+          plugin_topics_mode: icons
+          plugin_topics_limit: 15
+
+          # ── 実績（achievements）──
+          plugin_achievements: yes
+          plugin_achievements_threshold: C
+          plugin_achievements_display: detailed
