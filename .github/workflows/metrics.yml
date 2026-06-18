@@ -37,18 +37,6 @@ jobs:
           plugin_followup_sections: repositories
           plugin_followup_indepth: yes
 
-          # ── コーディング習慣（時間帯・曜日ヒートマップ）──
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
-
-          # ── 最近のアクティビティ ──
-          plugin_activity: yes
-          plugin_activity_limit: 5
-          plugin_activity_days: 14
-
           # ── 注目リポジトリ・スター ──
           plugin_notable: yes
           plugin_stars: yes
@@ -58,8 +46,3 @@ jobs:
           plugin_topics: yes
           plugin_topics_mode: icons
           plugin_topics_limit: 15
-
-          # ── 実績（achievements）──
-          plugin_achievements: yes
-          plugin_achievements_threshold: C
-          plugin_achievements_display: detailed
