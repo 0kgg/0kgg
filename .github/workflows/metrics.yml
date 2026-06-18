@@ -37,12 +37,5 @@ jobs:
           plugin_followup_sections: repositories
           plugin_followup_indepth: yes
 
-          # ── 注目リポジトリ・スター ──
+          # ── 注目リポジトリ ──
           plugin_notable: yes
-          plugin_stars: yes
-          plugin_stars_limit: 4
-
-          # ── 取り組んでいるトピック ──
-          plugin_topics: yes
-          plugin_topics_mode: icons
-          plugin_topics_limit: 15
