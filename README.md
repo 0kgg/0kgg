@@ -16,3 +16,5 @@ Here are some ideas to get you started:
 -->
 
 ![Metrics](./github-metrics.svg)
+
+![3D Contrib](./profile-3d-contrib/profile-green-animate.svg)
