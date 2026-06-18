@@ -17,4 +17,12 @@ Here are some ideas to get you started:
 
 ![Metrics](./github-metrics.svg)
 
-![3D Contrib](./profile-3d-contrib/profile-green-animate.svg)
+![3D Contrib](./profile-3d-contrib/profile-night-rainbow.svg)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/0kgg/0kgg/output/github-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/0kgg/0kgg/output/github-snake.svg">
+  <img alt="Snake animation" src="https://raw.githubusercontent.com/0kgg/0kgg/output/github-snake.svg">
+</picture>
+
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=0kgg&theme=react-dark&hide_border=true&area=true)
